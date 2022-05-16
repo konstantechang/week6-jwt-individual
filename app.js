@@ -15,7 +15,7 @@ const swaggerFile = require('./swagger-output.json');
 
 const app = express();
 
-require('./connections/mongodb');
+require('./connections/mongodb/index');
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
