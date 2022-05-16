@@ -1,5 +1,5 @@
 {
-  "name": "meta-wall-backend",
+  "name": "week6-jwt-individual",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,6 +7,9 @@
     "start": "node ./bin/www",
     "start:dev": "nodemon ./bin/www",
     "swagger": "node ./swagger.js"
+  },
+  "engines": {
+    "node": "v16.x"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
