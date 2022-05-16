@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "daebe7e8-3a7a-4c1c-9184-fb2f3929f01f",
+		"name": "weekfinal-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "使用者註冊-sign_up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Malenia2\",\r\n    \"email\": \"Malenia2@eldenring.io\",\r\n    \"password\": \"password\",\r\n    \"confirmPassword\": \"password\",\r\n    \"sex\": \"female\",\r\n    \"photo\": \"https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2022/03/elden-ring-malenia.jpg\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://protected-cove-40982.herokuapp.com/users/sign_up",
+					"protocol": "https",
+					"host": [
+						"protected-cove-40982",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得使用者profile",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODI2YWE2YWYyZjIzMTE5NGY5MTVlYSIsImlhdCI6MTY1MjcxNDE1MSwiZXhwIjoxNjUzMzE4OTUxfQ.E37od_rNDOI5YHCG45lDFUxT7PL5SG-a7V1bnS4TXf4",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://protected-cove-40982.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"protected-cove-40982",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用者變更密碼",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODI2YWE2YWYyZjIzMTE5NGY5MTVlYSIsImlhdCI6MTY1MjcxNDE1MSwiZXhwIjoxNjUzMzE4OTUxfQ.E37od_rNDOI5YHCG45lDFUxT7PL5SG-a7V1bnS4TXf4",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"password1\",\r\n    \"confirmPassword\": \"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://protected-cove-40982.herokuapp.com/users/updatePassword",
+					"protocol": "https",
+					"host": [
+						"protected-cove-40982",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新使用者資訊",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyODI2YWE2YWYyZjIzMTE5NGY5MTVlYSIsImlhdCI6MTY1MjcxNDE1MSwiZXhwIjoxNjUzMzE4OTUxfQ.E37od_rNDOI5YHCG45lDFUxT7PL5SG-a7V1bnS4TXf4",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Miquella2\",\r\n    \"sex\": \"male\",\r\n    \"photo\": \"https://cn.jugomobile.com/wp-content/uploads/2022/04/1649229883_%E5%A6%82%E4%BD%95%E5%9C%A8Elden-R.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://protected-cove-40982.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"protected-cove-40982",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用者登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"Malenia@eldenring.io\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://protected-cove-40982.herokuapp.com/users/sign_in",
+					"protocol": "https",
+					"host": [
+						"protected-cove-40982",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
