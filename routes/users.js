@@ -39,8 +39,14 @@ router.post('/sign_up', handleErrorAsync( async (req, res, next) => {
 
         }
     */
-    console.log(req.body);
+    //console.log(req.body);
     let {email, password, confirmPassword, name} = req.body;
+
+    //確認email先前有無註冊過
+    let user = await User.findOne({email});
+    if(user){
+        return next(appError("400", "此mail己註冊過", next));
+    }    
 
     //有欄位未填寫
     if(!email || !password || !confirmPassword || !name) {

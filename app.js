@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   })
 })
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   res.status(500).send({
     status: false,
     err: err.name,
