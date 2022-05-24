@@ -195,12 +195,12 @@ router.post( '/updatePassword',
 
 router.patch('/profile', isAuth, handleErrorAsync( async (req, res, next) => {
     let {name, photo, sex} = req.body;
-    const sexEnumCheck = {'male': 'male',  'female': 'female'};
+    //const sexEnumCheck = {'male': 'male',  'female': 'female'};
     if(!name || !photo ||  !sex ){
         return next(appError("400", "要修改的欄位未正確填寫", next));
     }
 
-    if(! sex in sexEnumCheck ){
+    if(sex !== 'male' || sex !== 'female' ){
         return next(appError("400", "性別請填 'male' 或 'female' "));
     }
 
