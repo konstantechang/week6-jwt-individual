@@ -195,9 +195,15 @@ router.post( '/updatePassword',
 
 router.patch('/profile', isAuth, handleErrorAsync( async (req, res, next) => {
     let {name, photo, sex} = req.body;
-    if(!name || !photo ||  !sex){
+    const sexEnumCheck = {'male': 'male',  'female': 'female'};
+    if(!name || !photo ||  !sex ){
         return next(appError("400", "要修改的欄位未正確填寫", next));
     }
+
+    if(!sex in sexEnumCheck ){
+        return next(appError("400", "性別請填 'male' 或 'female' "));
+    }
+
     if(!validator.isURL(photo)){
         return next("400", "請確認照片連結是否正確", next);
     }
