@@ -201,7 +201,7 @@ router.patch('/profile', isAuth, handleErrorAsync( async (req, res, next) => {
     }
 
     if(sex !== 'male' || sex !== 'female' ){
-        return next(appError("400", "性別請填 'male' 或 'female' "));
+        return next(appError("400", "性別請填 male 或 female ", next));
     }
 
     if(!validator.isURL(photo)){
